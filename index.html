@@ -1,106 +1,37 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <title>지역봉사지도원 활동일지</title>
 
-  <!-- 카톡 미리보기 (Open Graph) -->
-  <meta property="og:title" content="활동일지 작성하기">
-  <meta property="og:description" content="오늘 활동일지를 간편하게 작성해 주세요.">
-  <meta property="og:image" content="https://dagajala-star.github.io/activity-landing/info.png">
-  <meta property="og:url" content="https://dagajala-star.github.io/activity-landing/">
+  <!-- 카카오톡 썸네일용 OG 메타태그 -->
+  <meta property="og:title" content="지역봉사지도원(회장 수당) 활동일지 제출 페이지" />
+  <meta property="og:description" content="오늘 활동일지를 간편하게 작성해 주세요." />
+  <meta property="og:image" content="https://dagajala-star.github.io/activity-landing/info.png" />
+  <meta property="og:url" content="https://dagajala-star.github.io/activity-landing/" />
+  <meta property="og:type" content="website" />
 
-  <title>활동일지 작성하기</title>
-
-  <style>
-    body {
-      font-family: Pretendard, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f4f6fa;
-      color: #333;
-    }
-
-    .container {
-      max-width: 480px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    .card {
-      background: white;
-      padding: 24px;
-      border-radius: 18px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      text-align: center;
-    }
-
-    img.header-img {
-      width: 100%;
-      border-radius: 15px;
-      margin-bottom: 20px;
-    }
-
-    h1 {
-      font-size: 24px;
-      margin-bottom: 12px;
-      font-weight: 700;
-    }
-
-    p {
-      font-size: 16px;
-      line-height: 1.5;
-      margin-bottom: 24px;
-    }
-
-    .btn {
-      display: inline-block;
-      width: 100%;
-      background: #4b70ff;
-      color: white;
-      padding: 16px;
-      border-radius: 12px;
-      font-size: 18px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: 0.2s;
-    }
-
-    .btn:hover {
-      background: #2f56ff;
-    }
-
-    .footer {
-      text-align: center;
-      font-size: 13px;
-      color: #888;
-      margin-top: 20px;
-    }
-  </style>
+  <!-- 살짝 여유 주고 자동 이동 (0초로 해도 되는데 1초 정도 권장) -->
+  <script>
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        window.location.replace(
+          'https://script.google.com/macros/s/AKfycbwRFx-3vd65PAxY2AtJJ6Tb35jI239DZyQj8YD2xIMxQwMZJOc2lJKaHZ9PKYSGSu9U/exec'
+        );
+      }, 200); // 0~500ms 사이면 사용자는 거의 못 느낌
+    });
+  </script>
 </head>
-<body>
-
-<div class="container">
-  <div class="card">
-    
-    <!-- 너가 올린 info.png가 자동 표시됨 -->
-    <img src="https://dagajala-star.github.io/activity-landing/info.png" class="header-img">
-
-    <h1>활동일지 작성하기</h1>
-    <p>
-      아래 버튼을 눌러 오늘 활동일지를 작성해 주세요.<br>
-      간단한 항목만 체크하면 자동 저장됩니다.
+<body style="margin:0; font-family:system-ui, sans-serif; text-align:center;">
+  <!-- 혹시 아주 잠깐 보게 될 때를 위한 안내 -->
+  <div style="padding:40px 16px;">
+    <img src="https://dagajala-star.github.io/activity-landing/info.png"
+         alt="지역봉사지도원 활동일지" style="max-width:100%; height:auto; border-radius:16px;"><br><br>
+    <p>지역봉사지도원 활동일지 페이지로 이동 중입니다…<br>
+      <a href="https://script.google.com/macros/s/AKfycbwRFx-3vd65PAxY2AtJJ6Tb35jI239DZyQj8YD2xIMxQwMZJOc2lJKaHZ9PKYSGSu9U/exec">
+        바로 이동하기
+      </a>
     </p>
-
-    <!-- 👉 여기에 실제 작성 폼 URL 만 넣으면 됨 -->
-    <a class="btn" href="https://script.google.com/macros/s/AKfycbwRFx-3vd65PAxY2AtJJ6Tb35jI239DZyQj8YD2xIMxQwMZJOc2lJKaHZ9PKYSGSu9U/exec" target="_blank">
-      활동일지 작성하기
-    </a>
   </div>
-  <div class="footer">
-    © 복지기관 활동일지 자동화 페이지
-  </div>
-</div>
-
 </body>
 </html>
