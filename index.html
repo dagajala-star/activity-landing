@@ -6,11 +6,27 @@
   <meta name="robots" content="noindex, nofollow" />
   <script>
     (function () {
-      const NEW_ORIGIN = "https://kr74.github.io";
-      const u = new URL(location.href);
-      location.replace(NEW_ORIGIN + u.pathname + u.search + u.hash);
+      const BASE = "https://kr74.github.io/a/";
+
+      // 1) ?k=..., ?name=... 읽기
+      const qs = new URLSearchParams(location.search);
+
+      // 2) #k=... 형태도 같이 지원(있으면 합치기)
+      if (location.hash) {
+        const hs = new URLSearchParams(location.hash.replace(/^#/, ""));
+        for (const [k, v] of hs.entries()) {
+          if (!qs.has(k)) qs.set(k, v);
+        }
+      }
+
+      // 3) 경로는 무시하고 /a/ 로만 보냄
+      const paramStr = qs.toString();
+      const target = paramStr ? (BASE + "?" + paramStr) : BASE;
+
+      location.replace(target);
     })();
   </script>
+
   <noscript>
     <meta http-equiv="refresh" content="0; url=https://kr74.github.io/a/" />
   </noscript>
