@@ -3,55 +3,34 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>이동 중…</title>
+  <title>Redirect</title>
 
-  <!-- (선택) 검색엔진에 굳이 안 잡히게 -->
-  <meta name="robots" content="noindex, nofollow" />
-
-  <!-- ✅ 공유/전달 시 kr74가 "대표 URL"로 잡히게 유도 -->
+  <!-- 공유/전달이 kr74로 정규화되면 좋다 했으니: 대표 URL을 kr74로 -->
   <meta property="og:url" content="https://kr74.github.io/a/" />
   <link rel="canonical" href="https://kr74.github.io/a/" />
 
-  <!-- ✅ 미리보기용(이미지는 kr74에 있는 걸 사용) -->
+  <!-- 미리보기용(원하면 유지, 싫으면 이 4줄도 지워도 됨) -->
   <meta property="og:title" content="지역봉사지도원 활동일지 작성하기" />
   <meta property="og:description" content="오늘 활동일지를 간편하게 작성해 주세요." />
   <meta property="og:image" content="https://kr74.github.io/a/info.png" />
   <meta property="og:type" content="website" />
 
-  <!-- 캐시 덜 타게(완벽하진 않지만 도움 됨) -->
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-  <meta http-equiv="Pragma" content="no-cache" />
-  <meta http-equiv="Expires" content="0" />
-
-  <!-- JS가 아예 막힌 경우에도 최소 kr74로 -->
-  <meta http-equiv="refresh" content="1; url=https://kr74.github.io/a/" />
+  <!-- JS가 막혀도 최소 kr74로 -->
+  <meta http-equiv="refresh" content="0; url=https://kr74.github.io/a/" />
 
   <script>
     (function () {
       const BASE = "https://kr74.github.io/a/";
-
-      // 1) 쿼리 파라미터 전달 (?k=..., ?name=...)
       const qs = new URLSearchParams(location.search);
 
-      // 2) 해시 파라미터도 전달 (#k=... 형태)
       if (location.hash) {
         const hs = new URLSearchParams(location.hash.replace(/^#/, ""));
-        for (const [k, v] of hs.entries()) {
-          if (!qs.has(k)) qs.set(k, v);
-        }
+        for (const [k, v] of hs.entries()) if (!qs.has(k)) qs.set(k, v);
       }
 
-      // (선택) dagajala에서만 쓰는 내부 파라미터가 있으면 전달 제외
-      // qs.delete("auto");
-
-      const paramStr = qs.toString();
-      const target = paramStr ? (BASE + "?" + paramStr) : BASE;
-
-      // 3) 이동 (인앱브라우저 대응으로 replace + fallback)
-      try { location.replace(target); }
-      catch (e) { location.href = target; }
-
-      setTimeout(() => { location.href = target; }, 250);
+      const s = qs.toString();
+      const target = s ? (BASE + "?" + s) : BASE;
+      location.replace(target);
     })();
   </script>
 </head>
